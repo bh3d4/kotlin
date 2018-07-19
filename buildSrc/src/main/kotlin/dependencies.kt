@@ -59,7 +59,13 @@ fun Project.kotlinDep(artifactBaseName: String, version: String): String = "org.
 
 
 val ideaActive: Boolean
-    get() = System.getProperty("idea.active") != null
+    get() {
+        val result = System.getProperty("idea.active") != null
+        if (result) {
+            println("In idea import...")
+        }
+        return result
+    }
 
 fun DependencyHandler.projectDist(name: String): ProjectDependency =
     project(name, configuration = if (ideaActive) null else "distJar").apply { isTransitive = false }

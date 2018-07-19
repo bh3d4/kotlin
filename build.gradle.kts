@@ -294,6 +294,10 @@ allprojects {
         for (repo in repos) {
             maven(repo)
         }
+
+        flatDir {
+            dir("custom-dependencies/lib")
+        }
     }
 
     configureJvmProject(javaHome!!, jvmTarget!!)

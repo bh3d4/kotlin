@@ -58,7 +58,7 @@ dependencies {
     shadows(project(":core:descriptors.runtime"))
     shadows(project(":core:util.runtime"))
     shadows("javax.inject:javax.inject:1")
-    shadows(project(":custom-dependencies:protobuf-lite", configuration = "default"))
+    shadows(":protobuf-2.6.1-lite")
 }
 
 val copyAnnotations by task<Sync> {
